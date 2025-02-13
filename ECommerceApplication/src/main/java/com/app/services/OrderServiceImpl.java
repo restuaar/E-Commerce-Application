@@ -24,6 +24,7 @@ import com.app.exceptions.ResourceNotFoundException;
 import com.app.payloads.OrderDTO;
 import com.app.payloads.OrderItemDTO;
 import com.app.payloads.OrderResponse;
+import com.app.payloads.PaymentDTO;
 import com.app.repositories.CartItemRepo;
 import com.app.repositories.CartRepo;
 import com.app.repositories.OrderItemRepo;
@@ -37,168 +38,190 @@ import jakarta.transaction.Transactional;
 @Service
 public class OrderServiceImpl implements OrderService {
 
-	@Autowired
-	public UserRepo userRepo;
+  @Autowired
+  public UserRepo userRepo;
 
-	@Autowired
-	public CartRepo cartRepo;
+  @Autowired
+  public CartRepo cartRepo;
 
-	@Autowired
-	public OrderRepo orderRepo;
+  @Autowired
+  public OrderRepo orderRepo;
 
-	@Autowired
-	private PaymentRepo paymentRepo;
+  @Autowired
+  private PaymentRepo paymentRepo;
 
-	@Autowired
-	public OrderItemRepo orderItemRepo;
+  @Autowired
+  public OrderItemRepo orderItemRepo;
 
-	@Autowired
-	public CartItemRepo cartItemRepo;
+  @Autowired
+  public CartItemRepo cartItemRepo;
 
-	@Autowired
-	public UserService userService;
+  @Autowired
+  public UserService userService;
 
-	@Autowired
-	public CartService cartService;
+  @Autowired
+  public CartService cartService;
 
-	@Autowired
-	public ModelMapper modelMapper;
+  @Autowired
+  public ModelMapper modelMapper;
 
-	@Override
-	public OrderDTO placeOrder(String email, Long cartId, String paymentMethod) {
+  @Override
+  public OrderDTO placeOrder(String email, Long cartId, String paymentMethod, PaymentDTO paymentDTO) {
+    if (paymentDTO.getPaymentMethod() != null) {
+      if (!paymentMethod.equalsIgnoreCase(paymentDTO.getPaymentMethod())) {
+        throw new APIException("Payment method does not match with the payment method in the request body");
+      }
+    }
 
-		Cart cart = cartRepo.findCartByEmailAndCartId(email, cartId);
+    Cart cart = cartRepo.findCartByEmailAndCartId(email, cartId);
 
-		if (cart == null) {
-			throw new ResourceNotFoundException("Cart", "cartId", cartId);
-		}
+    if (cart == null) {
+      throw new ResourceNotFoundException("Cart", "cartId", cartId);
+    }
 
-		Order order = new Order();
+    Order order = new Order();
 
-		order.setEmail(email);
-		order.setOrderDate(LocalDate.now());
+    order.setEmail(email);
+    order.setOrderDate(LocalDate.now());
 
-		order.setTotalAmount(cart.getTotalPrice());
-		order.setOrderStatus("Order Accepted !");
+    order.setTotalAmount(cart.getTotalPrice());
+    order.setOrderStatus("Order Accepted !");
 
-		Payment payment = new Payment();
-		payment.setOrder(order);
-		payment.setPaymentMethod(paymentMethod);
+    Payment payment = new Payment();
+    payment.setOrder(order);
+    payment.setPaymentMethod(paymentMethod);
 
-		payment = paymentRepo.save(payment);
+    if (!paymentMethod.equalsIgnoreCase("CRIDIT CARD")) {
+      throw new APIException("Payment method must be CRIDIT CARD");
+    }
 
-		order.setPayment(payment);
+    Long cardNumber = paymentDTO.getCardNumber();
+    Integer CVC = paymentDTO.getCardVerificationCode();
 
-		Order savedOrder = orderRepo.save(order);
+    if (cardNumber == null || String.valueOf(cardNumber).length() != 16) {
+      throw new APIException("Card number must be 16 digits");
+    }
+    if (CVC == null || String.valueOf(CVC).length() != 3) {
+      throw new APIException("Card verification code must be 3 digits");
+    }
 
-		List<CartItem> cartItems = cart.getCartItems();
+    payment.setCardNumber(cardNumber);
+    payment.setCardVerificationCode(CVC);
 
-		if (cartItems.size() == 0) {
-			throw new APIException("Cart is empty");
-		}
+    payment = paymentRepo.save(payment);
 
-		List<OrderItem> orderItems = new ArrayList<>();
+    order.setPayment(payment);
 
-		for (CartItem cartItem : cartItems) {
-			OrderItem orderItem = new OrderItem();
+    Order savedOrder = orderRepo.save(order);
 
-			orderItem.setProduct(cartItem.getProduct());
-			orderItem.setQuantity(cartItem.getQuantity());
-			orderItem.setDiscount(cartItem.getDiscount());
-			orderItem.setOrderedProductPrice(cartItem.getProductPrice());
-			orderItem.setOrder(savedOrder);
+    List<CartItem> cartItems = cart.getCartItems();
 
-			orderItems.add(orderItem);
-		}
+    if (cartItems.size() == 0) {
+      throw new APIException("Cart is empty");
+    }
 
-		orderItems = orderItemRepo.saveAll(orderItems);
+    List<OrderItem> orderItems = new ArrayList<>();
 
-		cart.getCartItems().forEach(item -> {
-			int quantity = item.getQuantity();
+    for (CartItem cartItem : cartItems) {
+      OrderItem orderItem = new OrderItem();
 
-			Product product = item.getProduct();
+      orderItem.setProduct(cartItem.getProduct());
+      orderItem.setQuantity(cartItem.getQuantity());
+      orderItem.setDiscount(cartItem.getDiscount());
+      orderItem.setOrderedProductPrice(cartItem.getProductPrice());
+      orderItem.setOrder(savedOrder);
 
-			cartService.deleteProductFromCart(cartId, item.getProduct().getProductId());
+      orderItems.add(orderItem);
+    }
 
-			product.setQuantity(product.getQuantity() - quantity);
-		});
+    orderItems = orderItemRepo.saveAll(orderItems);
 
-		OrderDTO orderDTO = modelMapper.map(savedOrder, OrderDTO.class);
-		
-		orderItems.forEach(item -> orderDTO.getOrderItems().add(modelMapper.map(item, OrderItemDTO.class)));
+    cart.getCartItems().forEach(item -> {
+      int quantity = item.getQuantity();
 
-		return orderDTO;
-	}
+      Product product = item.getProduct();
 
-	@Override
-	public List<OrderDTO> getOrdersByUser(String email) {
-		List<Order> orders = orderRepo.findAllByEmail(email);
+      cartService.deleteProductFromCart(cartId, item.getProduct().getProductId());
 
-		List<OrderDTO> orderDTOs = orders.stream().map(order -> modelMapper.map(order, OrderDTO.class))
-				.collect(Collectors.toList());
+      product.setQuantity(product.getQuantity() - quantity);
+    });
 
-		if (orderDTOs.size() == 0) {
-			throw new APIException("No orders placed yet by the user with email: " + email);
-		}
+    OrderDTO orderDTO = modelMapper.map(savedOrder, OrderDTO.class);
 
-		return orderDTOs;
-	}
+    orderItems.forEach(item -> orderDTO.getOrderItems().add(modelMapper.map(item, OrderItemDTO.class)));
 
-	@Override
-	public OrderDTO getOrder(String email, Long orderId) {
+    return orderDTO;
+  }
 
-		Order order = orderRepo.findOrderByEmailAndOrderId(email, orderId);
+  @Override
+  public List<OrderDTO> getOrdersByUser(String email) {
+    List<Order> orders = orderRepo.findAllByEmail(email);
 
-		if (order == null) {
-			throw new ResourceNotFoundException("Order", "orderId", orderId);
-		}
+    List<OrderDTO> orderDTOs = orders.stream().map(order -> modelMapper.map(order, OrderDTO.class))
+        .collect(Collectors.toList());
 
-		return modelMapper.map(order, OrderDTO.class);
-	}
+    if (orderDTOs.size() == 0) {
+      throw new APIException("No orders placed yet by the user with email: " + email);
+    }
 
-	@Override
-	public OrderResponse getAllOrders(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) {
+    return orderDTOs;
+  }
 
-		Sort sortByAndOrder = sortOrder.equalsIgnoreCase("asc") ? Sort.by(sortBy).ascending()
-				: Sort.by(sortBy).descending();
+  @Override
+  public OrderDTO getOrder(String email, Long orderId) {
 
-		Pageable pageDetails = PageRequest.of(pageNumber, pageSize, sortByAndOrder);
+    Order order = orderRepo.findOrderByEmailAndOrderId(email, orderId);
 
-		Page<Order> pageOrders = orderRepo.findAll(pageDetails);
+    if (order == null) {
+      throw new ResourceNotFoundException("Order", "orderId", orderId);
+    }
 
-		List<Order> orders = pageOrders.getContent();
+    return modelMapper.map(order, OrderDTO.class);
+  }
 
-		List<OrderDTO> orderDTOs = orders.stream().map(order -> modelMapper.map(order, OrderDTO.class))
-				.collect(Collectors.toList());
-		
-		if (orderDTOs.size() == 0) {
-			throw new APIException("No orders placed yet by the users");
-		}
+  @Override
+  public OrderResponse getAllOrders(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) {
 
-		OrderResponse orderResponse = new OrderResponse();
-		
-		orderResponse.setContent(orderDTOs);
-		orderResponse.setPageNumber(pageOrders.getNumber());
-		orderResponse.setPageSize(pageOrders.getSize());
-		orderResponse.setTotalElements(pageOrders.getTotalElements());
-		orderResponse.setTotalPages(pageOrders.getTotalPages());
-		orderResponse.setLastPage(pageOrders.isLast());
-		
-		return orderResponse;
-	}
+    Sort sortByAndOrder = sortOrder.equalsIgnoreCase("asc") ? Sort.by(sortBy).ascending()
+        : Sort.by(sortBy).descending();
 
-	@Override
-	public OrderDTO updateOrder(String email, Long orderId, String orderStatus) {
+    Pageable pageDetails = PageRequest.of(pageNumber, pageSize, sortByAndOrder);
 
-		Order order = orderRepo.findOrderByEmailAndOrderId(email, orderId);
+    Page<Order> pageOrders = orderRepo.findAll(pageDetails);
 
-		if (order == null) {
-			throw new ResourceNotFoundException("Order", "orderId", orderId);
-		}
+    List<Order> orders = pageOrders.getContent();
 
-		order.setOrderStatus(orderStatus);
+    List<OrderDTO> orderDTOs = orders.stream().map(order -> modelMapper.map(order, OrderDTO.class))
+        .collect(Collectors.toList());
 
-		return modelMapper.map(order, OrderDTO.class);
-	}
+    if (orderDTOs.size() == 0) {
+      throw new APIException("No orders placed yet by the users");
+    }
+
+    OrderResponse orderResponse = new OrderResponse();
+
+    orderResponse.setContent(orderDTOs);
+    orderResponse.setPageNumber(pageOrders.getNumber());
+    orderResponse.setPageSize(pageOrders.getSize());
+    orderResponse.setTotalElements(pageOrders.getTotalElements());
+    orderResponse.setTotalPages(pageOrders.getTotalPages());
+    orderResponse.setLastPage(pageOrders.isLast());
+
+    return orderResponse;
+  }
+
+  @Override
+  public OrderDTO updateOrder(String email, Long orderId, String orderStatus) {
+
+    Order order = orderRepo.findOrderByEmailAndOrderId(email, orderId);
+
+    if (order == null) {
+      throw new ResourceNotFoundException("Order", "orderId", orderId);
+    }
+
+    order.setOrderStatus(orderStatus);
+
+    return modelMapper.map(order, OrderDTO.class);
+  }
 
 }

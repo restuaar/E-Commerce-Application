@@ -11,4 +11,6 @@ public class PaymentDTO {
 	private Long paymentId;
 	private String paymentMethod;
 
+  private Long cardNumber;
+  private Integer cardVerificationCode;
 }

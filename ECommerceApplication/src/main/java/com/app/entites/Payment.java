@@ -31,4 +31,7 @@ public class Payment {
 	@Size(min = 4, message = "Payment method must contain atleast 4 characters")
 	private String paymentMethod;
 
+  private Long cardNumber;
+
+  private Integer cardVerificationCode;
 }
