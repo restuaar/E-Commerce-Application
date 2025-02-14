@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.app.entites.*;
+import com.app.payloads.*;
+import com.app.repositories.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -13,23 +16,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.app.entites.Cart;
-import com.app.entites.CartItem;
-import com.app.entites.Order;
-import com.app.entites.OrderItem;
-import com.app.entites.Payment;
-import com.app.entites.Product;
 import com.app.exceptions.APIException;
 import com.app.exceptions.ResourceNotFoundException;
-import com.app.payloads.OrderDTO;
-import com.app.payloads.OrderItemDTO;
-import com.app.payloads.OrderResponse;
-import com.app.repositories.CartItemRepo;
-import com.app.repositories.CartRepo;
-import com.app.repositories.OrderItemRepo;
-import com.app.repositories.OrderRepo;
-import com.app.repositories.PaymentRepo;
-import com.app.repositories.UserRepo;
 
 import jakarta.transaction.Transactional;
 
@@ -56,6 +44,9 @@ public class OrderServiceImpl implements OrderService {
 	public CartItemRepo cartItemRepo;
 
 	@Autowired
+	public CouponRepo couponRepo;
+
+	@Autowired
 	public UserService userService;
 
 	@Autowired
@@ -65,7 +56,7 @@ public class OrderServiceImpl implements OrderService {
 	public ModelMapper modelMapper;
 
 	@Override
-	public OrderDTO placeOrder(String email, Long cartId, String paymentMethod) {
+	public OrderDTO placeOrder(String email, Long cartId, String paymentMethod, PaymentDTO paymentDTO) {
 
 		Cart cart = cartRepo.findCartByEmailAndCartId(email, cartId);
 
@@ -78,7 +69,17 @@ public class OrderServiceImpl implements OrderService {
 		order.setEmail(email);
 		order.setOrderDate(LocalDate.now());
 
-		order.setTotalAmount(cart.getTotalPrice());
+    double totalAmount = cart.getTotalPrice();
+    if (paymentDTO.getCouponId() != null) {
+      Coupon coupon = couponRepo.findByCouponId(paymentDTO.getCouponId());
+      if (coupon == null) {
+        throw new ResourceNotFoundException("Coupon", "couponId", paymentDTO.getCouponId());
+      }
+      totalAmount = (1 - (coupon.getDiscount() / 100.0)) * cart.getTotalPrice();
+      order.setOrderStatus("Order Accepted !");
+    } 
+
+		order.setTotalAmount(totalAmount);
 		order.setOrderStatus("Order Accepted !");
 
 		Payment payment = new Payment();
@@ -86,6 +87,7 @@ public class OrderServiceImpl implements OrderService {
 		payment.setPaymentMethod(paymentMethod);
 
 		payment = paymentRepo.save(payment);
+		payment.setCouponId(paymentDTO.getCouponId());
 
 		order.setPayment(payment);
 
