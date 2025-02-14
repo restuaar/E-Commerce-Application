@@ -69,9 +69,16 @@ public class OrderServiceImpl implements OrderService {
 		order.setEmail(email);
 		order.setOrderDate(LocalDate.now());
 
-		Coupon coupon = couponRepo.findByCouponId(paymentDTO.getCouponId());
+    double totalAmount = cart.getTotalPrice();
+    if (paymentDTO.getCouponId() != null) {
+      Coupon coupon = couponRepo.findByCouponId(paymentDTO.getCouponId());
+      if (coupon == null) {
+        throw new ResourceNotFoundException("Coupon", "couponId", paymentDTO.getCouponId());
+      }
+      totalAmount = (1 - (coupon.getDiscount() / 100.0)) * cart.getTotalPrice();
+      order.setOrderStatus("Order Accepted !");
+    } 
 
-		double totalAmount = (1 - coupon.getDiscount() / 100.0) * cart.getTotalPrice();
 		order.setTotalAmount(totalAmount);
 		order.setOrderStatus("Order Accepted !");
 

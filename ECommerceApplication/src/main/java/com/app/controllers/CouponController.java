@@ -1,8 +1,6 @@
 package com.app.controllers;
 
-import com.app.config.AppConstants;
 import com.app.payloads.*;
-import com.app.repositories.CouponRepo;
 import com.app.services.CouponService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
