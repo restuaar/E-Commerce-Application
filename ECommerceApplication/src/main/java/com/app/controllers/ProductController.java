@@ -35,7 +35,6 @@ public class ProductController {
 
 	@PostMapping("/admin/categories/{categoryId}/product")
 	public ResponseEntity<ProductDTO> addProduct(@Valid @RequestBody Product product, @PathVariable Long categoryId) {
-		System.out.println("ini product: " + product);
 		ProductDTO savedProduct = new ProductDTO();
 		if(product.getBrand().getBrandName().isEmpty()){
 			savedProduct = productService.addProduct(categoryId, product);

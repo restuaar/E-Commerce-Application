@@ -24,7 +24,7 @@ public class Coupon {
 
   @NotBlank
   @Size(min = 5, message = "Coupon must contain atleast 5 characters")
-  private String brandName;
+  private String couponName;
 
   @NotNull
   private double discount;

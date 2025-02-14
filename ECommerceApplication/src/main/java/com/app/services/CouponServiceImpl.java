@@ -23,9 +23,23 @@ public class CouponServiceImpl implements CouponService{
 
     @Override
     public CouponDTO addCoupon(CouponDTO couponDTO) {
+        List<Coupon> coupons = couponRepo.findAll();
+        boolean isCouponNotPresent = true;
+
+        for (int i = 0; i < coupons.size(); i++) {
+            if (coupons.get(i).getCouponName().equals(couponDTO.getCouponName())) {
+                isCouponNotPresent = false;
+                break;
+            }
+        }
+
+        if (!isCouponNotPresent) {
+            throw new APIException("Coupon already exists !!!");
+        }
+
         Coupon coupon = new Coupon();
         coupon.setDiscount(couponDTO.getDiscount());
-        coupon.setBrandName(couponDTO.getBrandName());
+        coupon.setCouponName(couponDTO.getCouponName());
         coupon.setActive(couponDTO.isActive());
 
         Coupon savedCoupon = couponRepo.save(coupon);

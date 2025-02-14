@@ -1,0 +1,3752 @@
+{
+	"info": {
+		"_postman_id": "62ee15c9-3f39-48ef-b43b-e4bb608a7bb8",
+		"name": "Ecommerce Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28454017"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": 0,\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"mobileNumber\": \"1234567890\",\n  \"email\": \"data3@example.com\",\n  \"password\": \"data3\",\n  \"roles\": [\n    {\n      \"roleId\": 101,\n      \"roleName\": \"ADMIN\"\n    }\n  ],\n  \"address\": {\n    \"addressId\": 0,\n    \"street\": \"data1\",\n    \"buildingName\": \"data1\",\n    \"city\": \"data1\",\n    \"state\": \"data1\",\n    \"country\": \"data1\",\n    \"pincode\": \"dataaaa1\"\n  },\n  \"cart\": {\n    \"cartId\": 0,\n    \"totalPrice\": 0,\n    \"products\": [\n      {\n        \"productId\": 0,\n        \"productName\": \"data1\",\n        \"image\": \"data1\",\n        \"description\": \"data1\",\n        \"quantity\": 0,\n        \"price\": 0,\n        \"discount\": 0,\n        \"specialPrice\": 0\n      }\n    ]\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/register"
+			},
+			"response": [
+				{
+					"name": "Admin1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": 0,\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"mobileNumber\": \"1234567890\",\n  \"email\": \"data3@example.com\",\n  \"password\": \"data3\",\n  \"roles\": [\n    {\n      \"roleId\": 101,\n      \"roleName\": \"ADMIN\"\n    }\n  ],\n  \"address\": {\n    \"addressId\": 0,\n    \"street\": \"data1\",\n    \"buildingName\": \"data1\",\n    \"city\": \"data1\",\n    \"state\": \"data1\",\n    \"country\": \"data1\",\n    \"pincode\": \"dataaaa1\"\n  },\n  \"cart\": {\n    \"cartId\": 0,\n    \"totalPrice\": 0,\n    \"products\": [\n      {\n        \"productId\": 0,\n        \"productName\": \"data1\",\n        \"image\": \"data1\",\n        \"description\": \"data1\",\n        \"quantity\": 0,\n        \"price\": 0,\n        \"discount\": 0,\n        \"specialPrice\": 0\n      }\n    ]\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/register"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 08:56:20 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"jwt-token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzc3ODAsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.dPLAcg0x4FzPGn-_KcCgdDh9HTQ6_lfqFuU3J8rIWTQ\"\n}"
+				},
+				{
+					"name": "User1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": 0,\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"mobileNumber\": \"1234567890\",\n  \"email\": \"data4@example.com\",\n  \"password\": \"data4\",\n  \"roles\": [\n    {\n      \"roleId\": 102,\n      \"roleName\": \"USER\"\n    }\n  ],\n  \"address\": {\n    \"addressId\": 0,\n    \"street\": \"data1\",\n    \"buildingName\": \"data1\",\n    \"city\": \"data1\",\n    \"state\": \"data1\",\n    \"country\": \"data1\",\n    \"pincode\": \"dataaaa1\"\n  },\n  \"cart\": {\n    \"cartId\": 0,\n    \"totalPrice\": 0,\n    \"products\": [\n      {\n        \"productId\": 0,\n        \"productName\": \"data1\",\n        \"image\": \"data1\",\n        \"description\": \"data1\",\n        \"quantity\": 0,\n        \"price\": 0,\n        \"discount\": 0,\n        \"specialPrice\": 0\n      }\n    ]\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/register"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 09:14:03 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"jwt-token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzg4NDMsImVtYWlsIjoiZGF0YTRAZXhhbXBsZS5jb20ifQ.OEDJdE8niOpWv_5jyxYCdy5qMPsMFwryDKaewyfEDpw\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"data3@example.com\",\n  \"password\": \"data3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/login"
+			},
+			"response": [
+				{
+					"name": "Admin1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"data3@example.com\",\n  \"password\": \"data3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/login"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 09:01:56 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"jwt-token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzgxMTYsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.Fd4AkHs2UfggLWdtrd4-F5PBAF0YPPahGhBCTEYx9aU\"\n}"
+				},
+				{
+					"name": "user1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"data4@example.com\",\n  \"password\": \"data4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/login"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 09:29:04 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"jwt-token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzk3NDQsImVtYWlsIjoiZGF0YTRAZXhhbXBsZS5jb20ifQ.SYQdQPVp_LQo97SpfOybLyuZ28RGIBviyHYoL2MPke8\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Post Address",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzc3ODAsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.dPLAcg0x4FzPGn-_KcCgdDh9HTQ6_lfqFuU3J8rIWTQ"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"street\": \"string1\",\n  \"buildingName\": \"string1\",\n  \"city\": \"string1\",\n  \"state\": \"string1\",\n  \"country\": \"string1\",\n  \"pincode\": \"string1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/admin/address"
+			},
+			"response": [
+				{
+					"name": "Address1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"street\": \"string1\",\n  \"buildingName\": \"string1\",\n  \"city\": \"string1\",\n  \"state\": \"string1\",\n  \"country\": \"string1\",\n  \"pincode\": \"string1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/admin/address"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 09:07:00 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"addressId\": 8,\n    \"street\": \"string1\",\n    \"buildingName\": \"string1\",\n    \"city\": \"string1\",\n    \"state\": \"string1\",\n    \"country\": \"string1\",\n    \"pincode\": \"string1\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Addresses",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzc3ODAsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.dPLAcg0x4FzPGn-_KcCgdDh9HTQ6_lfqFuU3J8rIWTQ"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/admin/addresses"
+			},
+			"response": [
+				{
+					"name": "Address1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/admin/addresses"
+					},
+					"status": "Found",
+					"code": 302,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 08:56:28 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"addressId\": 2,\n        \"street\": \"string\",\n        \"buildingName\": \"string\",\n        \"city\": \"string\",\n        \"state\": \"string\",\n        \"country\": \"string\",\n        \"pincode\": \"string\"\n    },\n    {\n        \"addressId\": 5,\n        \"street\": \"data1\",\n        \"buildingName\": \"data1\",\n        \"city\": \"data1\",\n        \"state\": \"data1\",\n        \"country\": \"data1\",\n        \"pincode\": \"dataaaa1\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Address By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzgxMTYsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.Fd4AkHs2UfggLWdtrd4-F5PBAF0YPPahGhBCTEYx9aU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/admin/addresses/2"
+			},
+			"response": [
+				{
+					"name": "Address1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/admin/addresses/2"
+					},
+					"status": "Found",
+					"code": 302,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 09:03:23 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"addressId\": 2,\n    \"street\": \"string\",\n    \"buildingName\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"country\": \"string\",\n    \"pincode\": \"string\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Put Adress By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzgxMTYsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.Fd4AkHs2UfggLWdtrd4-F5PBAF0YPPahGhBCTEYx9aU"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"addressId\": 0,\n  \"street\": \"string\",\n  \"buildingName\": \"string\",\n  \"city\": \"string\",\n  \"state\": \"string\",\n  \"country\": \"string\",\n  \"pincode\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/admin/addresses/2"
+			},
+			"response": [
+				{
+					"name": "Address1",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"addressId\": 0,\n  \"street\": \"string\",\n  \"buildingName\": \"string\",\n  \"city\": \"string\",\n  \"state\": \"string\",\n  \"country\": \"string\",\n  \"pincode\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/admin/addresses/2"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 09:04:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"addressId\": 2,\n    \"street\": \"string\",\n    \"buildingName\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"country\": \"string\",\n    \"pincode\": \"string\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Address By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzgxMTYsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.Fd4AkHs2UfggLWdtrd4-F5PBAF0YPPahGhBCTEYx9aU"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/api/admin/addresses/6"
+			},
+			"response": [
+				{
+					"name": "Address1",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/api/admin/addresses/6"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "45"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 09:06:53 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Address deleted succesfully with addressId: 6"
+				}
+			]
+		},
+		{
+			"name": "Get Admin Carts",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Carts1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/admin/carts"
+					},
+					"status": "Found",
+					"code": 302,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 09:11:48 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"cartId\": 1,\n        \"totalPrice\": 0,\n        \"products\": []\n    },\n    {\n        \"cartId\": 2,\n        \"totalPrice\": 0,\n        \"products\": []\n    },\n    {\n        \"cartId\": 3,\n        \"totalPrice\": 0,\n        \"products\": []\n    },\n    {\n        \"cartId\": 4,\n        \"totalPrice\": 0,\n        \"products\": []\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzkxNzUsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.wgV4SKmylRIZk-GQtzvH6Xdd1JEWlL3s7cg84mZjVOs"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/admin/users"
+			},
+			"response": [
+				{
+					"name": "Users1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/admin/users"
+					},
+					"status": "Found",
+					"code": 302,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 09:20:28 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"content\": [\n        {\n            \"userId\": 1,\n            \"firstName\": \"string\",\n            \"lastName\": \"string\",\n            \"mobileNumber\": \"0123456789\",\n            \"email\": \"string@example.com\",\n            \"password\": \"$2a$10$l2YXT7PFgpxoQDK./tERs.YT2TyyteI7Y9rjUSzkV5FCo7vfYNU/a\",\n            \"roles\": [\n                {\n                    \"roleId\": 102,\n                    \"roleName\": \"USER\"\n                },\n                {\n                    \"roleId\": 0,\n                    \"roleName\": \"data1\"\n                }\n            ],\n            \"address\": null,\n            \"cart\": {\n                \"cartId\": 1,\n                \"totalPrice\": 0,\n                \"products\": []\n            }\n        },\n        {\n            \"userId\": 2,\n            \"firstName\": \"string\",\n            \"lastName\": \"string\",\n            \"mobileNumber\": \"1234567890\",\n            \"email\": \"data1@example.com\",\n            \"password\": \"$2a$10$rl6msD/NTfuwBIu1Y.rYxe2klzkrgZjGlScFsPbN5dlFUqbwamMoW\",\n            \"roles\": [\n                {\n                    \"roleId\": 102,\n                    \"roleName\": \"USER\"\n                },\n                {\n                    \"roleId\": 0,\n                    \"roleName\": \"data1\"\n                }\n            ],\n            \"address\": {\n                \"addressId\": 5,\n                \"street\": \"data1\",\n                \"buildingName\": \"data1\",\n                \"city\": \"data1\",\n                \"state\": \"data1\",\n                \"country\": \"data1\",\n                \"pincode\": \"dataaaa1\"\n            },\n            \"cart\": {\n                \"cartId\": 2,\n                \"totalPrice\": 0,\n                \"products\": []\n            }\n        }\n    ],\n    \"pageNumber\": 0,\n    \"pageSize\": 2,\n    \"totalElements\": 5,\n    \"totalPages\": 3,\n    \"lastPage\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzkxNzUsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.wgV4SKmylRIZk-GQtzvH6Xdd1JEWlL3s7cg84mZjVOs"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/api/admin/users/2"
+			},
+			"response": [
+				{
+					"name": "User1",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/api/admin/users/2"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 09:22:01 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "User with userId 2 deleted successfully!!!"
+				}
+			]
+		},
+		{
+			"name": "Get User By Id ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzkxNzUsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.wgV4SKmylRIZk-GQtzvH6Xdd1JEWlL3s7cg84mZjVOs"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/public/users/6"
+			},
+			"response": [
+				{
+					"name": "User1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/public/users/6"
+					},
+					"status": "Found",
+					"code": 302,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 09:23:10 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"userId\": 6,\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"mobileNumber\": \"1234567890\",\n    \"email\": \"data4@example.com\",\n    \"password\": \"$2a$10$wJFkl8rO5AEZCut6UA69dO2UzM2BBQ9qfERurDrbXPCpbJ5dosVVW\",\n    \"roles\": [\n        {\n            \"roleId\": 102,\n            \"roleName\": \"USER\"\n        }\n    ],\n    \"address\": {\n        \"addressId\": 5,\n        \"street\": \"data1\",\n        \"buildingName\": \"data1\",\n        \"city\": \"data1\",\n        \"state\": \"data1\",\n        \"country\": \"data1\",\n        \"pincode\": \"dataaaa1\"\n    },\n    \"cart\": {\n        \"cartId\": 5,\n        \"totalPrice\": 0,\n        \"products\": []\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Put User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzkxNzUsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.wgV4SKmylRIZk-GQtzvH6Xdd1JEWlL3s7cg84mZjVOs"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": 5,\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"mobileNumber\": \"1234567890\",\n  \"email\": \"data3@example.com\",\n  \"password\": \"data3\",\n  \"roles\": [\n    {\n      \"roleId\": 0,\n      \"roleName\": \"string\"\n    }\n  ],\n  \"address\": {\n    \"addressId\": 0,\n    \"street\": \"string\",\n    \"buildingName\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"country\": \"string\",\n    \"pincode\": \"string\"\n  },\n  \"cart\": {\n    \"cartId\": 0,\n    \"totalPrice\": 0,\n    \"products\": [\n      {\n        \"productId\": 0,\n        \"productName\": \"string\",\n        \"image\": \"string\",\n        \"description\": \"string\",\n        \"quantity\": 0,\n        \"price\": 0,\n        \"discount\": 0,\n        \"specialPrice\": 0\n      }\n    ]\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/public/users/5"
+			},
+			"response": [
+				{
+					"name": "User1",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": 5,\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"mobileNumber\": \"1234567890\",\n  \"email\": \"data3@example.com\",\n  \"password\": \"data3\",\n  \"roles\": [\n    {\n      \"roleId\": 0,\n      \"roleName\": \"string\"\n    }\n  ],\n  \"address\": {\n    \"addressId\": 0,\n    \"street\": \"string\",\n    \"buildingName\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"country\": \"string\",\n    \"pincode\": \"string\"\n  },\n  \"cart\": {\n    \"cartId\": 0,\n    \"totalPrice\": 0,\n    \"products\": [\n      {\n        \"productId\": 0,\n        \"productName\": \"string\",\n        \"image\": \"string\",\n        \"description\": \"string\",\n        \"quantity\": 0,\n        \"price\": 0,\n        \"discount\": 0,\n        \"specialPrice\": 0\n      }\n    ]\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/public/users/5"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 09:34:29 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"userId\": 5,\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"mobileNumber\": \"1234567890\",\n    \"email\": \"data3@example.com\",\n    \"password\": \"$2a$10$3BVHf5873OPH1GNXoa80ceQYmLSHjZCXZ3DhA.nFfZs9Zsfbrt7Mq\",\n    \"roles\": [\n        {\n            \"roleId\": 101,\n            \"roleName\": \"ADMIN\"\n        },\n        {\n            \"roleId\": 102,\n            \"roleName\": \"USER\"\n        }\n    ],\n    \"address\": {\n        \"addressId\": 5,\n        \"street\": \"data1\",\n        \"buildingName\": \"data1\",\n        \"city\": \"data1\",\n        \"state\": \"data1\",\n        \"country\": \"data1\",\n        \"pincode\": \"dataaaa1\"\n    },\n    \"cart\": {\n        \"cartId\": 4,\n        \"totalPrice\": 0,\n        \"products\": []\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Post Admin Category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzgxMTYsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.Fd4AkHs2UfggLWdtrd4-F5PBAF0YPPahGhBCTEYx9aU"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"categoryId\": 0,\n  \"categoryName\": \"string\",\n      \"orderItems\": [\n        {\n          \"orderItemId\": 0,\n          \"product\": \"string\",\n          \"order\": {\n            \"orderId\": 0,\n            \"email\": \"string\",\n            \"orderItems\": [\n              \"string\"\n            ],\n            \"orderDate\": \"2025-02-10\",\n            \"payment\": {\n              \"paymentId\": 0,\n              \"order\": \"string\",\n              \"paymentMethod\": \"string\"\n            },\n            \"totalAmount\": 0,\n            \"orderStatus\": \"string\"\n          },\n          \"quantity\": 0,\n          \"discount\": 0,\n          \"orderedProductPrice\": 0\n        }\n      ]\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/admin/category"
+			},
+			"response": [
+				{
+					"name": "Category1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"categoryId\": 0,\n  \"categoryName\": \"string\",\n      \"orderItems\": [\n        {\n          \"orderItemId\": 0,\n          \"product\": \"string\",\n          \"order\": {\n            \"orderId\": 0,\n            \"email\": \"string\",\n            \"orderItems\": [\n              \"string\"\n            ],\n            \"orderDate\": \"2025-02-10\",\n            \"payment\": {\n              \"paymentId\": 0,\n              \"order\": \"string\",\n              \"paymentMethod\": \"string\"\n            },\n            \"totalAmount\": 0,\n            \"orderStatus\": \"string\"\n          },\n          \"quantity\": 0,\n          \"discount\": 0,\n          \"orderedProductPrice\": 0\n        }\n      ]\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/admin/category"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 09:42:10 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"categoryId\": 1,\n    \"categoryName\": \"string\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Categories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzgxMTYsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.Fd4AkHs2UfggLWdtrd4-F5PBAF0YPPahGhBCTEYx9aU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/public/categories"
+			},
+			"response": [
+				{
+					"name": "Categories1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/public/categories"
+					},
+					"status": "Found",
+					"code": 302,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 09:44:15 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"content\": [\n        {\n            \"categoryId\": 1,\n            \"categoryName\": \"string\"\n        }\n    ],\n    \"pageNumber\": 0,\n    \"pageSize\": 2,\n    \"totalElements\": 1,\n    \"totalPages\": 1,\n    \"lastPage\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Put Categories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzgxMTYsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.Fd4AkHs2UfggLWdtrd4-F5PBAF0YPPahGhBCTEYx9aU"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"categoryId\": 2,\n  \"categoryName\": \"string1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/admin/categories/1"
+			},
+			"response": [
+				{
+					"name": "Category1",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"categoryId\": 2,\n  \"categoryName\": \"string1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/admin/categories/1"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 09:49:37 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"categoryId\": 1,\n    \"categoryName\": \"string1\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzgxMTYsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.Fd4AkHs2UfggLWdtrd4-F5PBAF0YPPahGhBCTEYx9aU"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/api/admin/categories/2"
+			},
+			"response": [
+				{
+					"name": "Category2",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/api/admin/categories/2"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 09:52:00 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Category with categoryId: 2 deleted successfully !!!"
+				}
+			]
+		},
+		{
+			"name": "Post Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3Mzk1NDMzNDcsImVtYWlsIjoidGVzdGluZzJAZXhhbXBsZS5jb20ifQ.74PIIqVxKg5dkJWD9UUZjVeS5NiR8SEsmcivM13qzNk"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"productId\": 0,\n  \"productName\": \"productsepuluhh\",\n  \"image\": \"productsebelas\",\n  \"description\": \"productsebelas\",\n  \"quantity\": 10,\n  \"price\": 10000,\n  \"discount\": 0,\n  \"specialPrice\": 0,\n  \"brand\": {\n    \"brandId\":1,\n    \"brandName\":\"String2\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/admin/categories/1/product"
+			},
+			"response": [
+				{
+					"name": "Product1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"productId\": 0,\n  \"productName\": \"string\",\n  \"image\": \"string\",\n  \"description\": \"string\",\n  \"quantity\": 0,\n  \"price\": 0,\n  \"discount\": 0,\n  \"specialPrice\": 0,\n  \"category\": {\n    \"categoryId\": 1,\n    \"categoryName\": \"string\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/admin/categories/1/product"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 09:57:52 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"productId\": 1,\n    \"productName\": \"string\",\n    \"image\": \"default.png\",\n    \"description\": \"string\",\n    \"quantity\": 0,\n    \"price\": 0,\n    \"discount\": 0,\n    \"specialPrice\": 0\n}"
+				},
+				{
+					"name": "Product - With Brand",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"productId\": 0,\n  \"productName\": \"productsepuluhhh\",\n  \"image\": \"productsebelas\",\n  \"description\": \"productsebelas\",\n  \"quantity\": 10,\n  \"price\": 10000,\n  \"discount\": 0,\n  \"specialPrice\": 0,\n  \"brand\": {\n    \"brandId\":1,\n    \"brandName\":\"String\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/admin/categories/1/product"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Feb 2025 15:08:52 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"productId\": 252,\n    \"productName\": \"productsepuluhhh\",\n    \"image\": \"default.png\",\n    \"description\": \"productsebelas\",\n    \"quantity\": 10,\n    \"price\": 10000,\n    \"discount\": 0,\n    \"specialPrice\": 10000\n}"
+				}
+			]
+		},
+		{
+			"name": "Put Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzgxMTYsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.Fd4AkHs2UfggLWdtrd4-F5PBAF0YPPahGhBCTEYx9aU"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"productId\": 1,\n  \"productName\": \"string\",\n  \"image\": \"string\",\n  \"description\": \"string\",\n  \"quantity\": 0,\n  \"price\": 0,\n  \"discount\": 0,\n  \"specialPrice\": 0,\n  \"category\": {\n    \"categoryId\": 0,\n    \"categoryName\": \"string\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/admin/products/1"
+			},
+			"response": [
+				{
+					"name": "Product1",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"productId\": 1,\n  \"productName\": \"string\",\n  \"image\": \"string\",\n  \"description\": \"string\",\n  \"quantity\": 0,\n  \"price\": 0,\n  \"discount\": 0,\n  \"specialPrice\": 0,\n  \"category\": {\n    \"categoryId\": 0,\n    \"categoryName\": \"string\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/admin/products/1"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 10:01:16 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"productId\": 1,\n    \"productName\": \"string\",\n    \"image\": \"default.png\",\n    \"description\": \"string\",\n    \"quantity\": 0,\n    \"price\": 0,\n    \"discount\": 0,\n    \"specialPrice\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Products By Categories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxODIwOTAsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ._a9oAzlgJBbkRKk1uPor--NAhjuOGttKwPgYq2nWo4M"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/public/categories/1/products"
+			},
+			"response": [
+				{
+					"name": "Categories1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/public/categories/1/products"
+					},
+					"status": "Found",
+					"code": 302,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 10:10:01 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"content\": [\n        {\n            \"productId\": 1,\n            \"productName\": \"string\",\n            \"image\": \"default.png\",\n            \"description\": \"string\",\n            \"quantity\": 0,\n            \"price\": 0,\n            \"discount\": 0,\n            \"specialPrice\": 0\n        }\n    ],\n    \"pageNumber\": 0,\n    \"pageSize\": 2,\n    \"totalElements\": 1,\n    \"totalPages\": 1,\n    \"lastPage\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxODIwOTAsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ._a9oAzlgJBbkRKk1uPor--NAhjuOGttKwPgYq2nWo4M"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/public/products"
+			},
+			"response": [
+				{
+					"name": "Products1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/public/products"
+					},
+					"status": "Found",
+					"code": 302,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 10:11:02 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"content\": [\n        {\n            \"productId\": 1,\n            \"productName\": \"string\",\n            \"image\": \"default.png\",\n            \"description\": \"string\",\n            \"quantity\": 0,\n            \"price\": 0,\n            \"discount\": 0,\n            \"specialPrice\": 0\n        }\n    ],\n    \"pageNumber\": 0,\n    \"pageSize\": 2,\n    \"totalElements\": 1,\n    \"totalPages\": 1,\n    \"lastPage\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Product By Keywords",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxODIwOTAsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ._a9oAzlgJBbkRKk1uPor--NAhjuOGttKwPgYq2nWo4M"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/public/products/keyword/s"
+			},
+			"response": [
+				{
+					"name": "Keywords1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/public/products/keyword/s"
+					},
+					"status": "Found",
+					"code": 302,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 10:15:14 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"content\": [\n        {\n            \"productId\": 1,\n            \"productName\": \"string\",\n            \"image\": \"default.png\",\n            \"description\": \"string\",\n            \"quantity\": 0,\n            \"price\": 0,\n            \"discount\": 0,\n            \"specialPrice\": 0\n        }\n    ],\n    \"pageNumber\": 0,\n    \"pageSize\": 2,\n    \"totalElements\": 1,\n    \"totalPages\": 1,\n    \"lastPage\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzgxMTYsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.Fd4AkHs2UfggLWdtrd4-F5PBAF0YPPahGhBCTEYx9aU"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/api/admin/products/1"
+			},
+			"response": [
+				{
+					"name": "Product1",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/api/admin/products/1"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "50"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 10:20:21 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Product with productId: 1 deleted successfully !!!"
+				}
+			]
+		},
+		{
+			"name": "Get Carts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzgxMTYsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.Fd4AkHs2UfggLWdtrd4-F5PBAF0YPPahGhBCTEYx9aU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/admin/carts"
+			},
+			"response": [
+				{
+					"name": "Carts1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/admin/carts"
+					},
+					"status": "Found",
+					"code": 302,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 10:23:42 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"cartId\": 1,\n        \"totalPrice\": 0,\n        \"products\": []\n    },\n    {\n        \"cartId\": 3,\n        \"totalPrice\": 0,\n        \"products\": []\n    },\n    {\n        \"cartId\": 4,\n        \"totalPrice\": 0,\n        \"products\": []\n    },\n    {\n        \"cartId\": 5,\n        \"totalPrice\": 0,\n        \"products\": []\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Add Product on Cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzgxMTYsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.Fd4AkHs2UfggLWdtrd4-F5PBAF0YPPahGhBCTEYx9aU"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"url": "localhost:8080/api/public/carts/1/products/3/quantity/1"
+			},
+			"response": [
+				{
+					"name": "Cart-Product1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": "localhost:8080/api/public/carts/1/products/3/quantity/1"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 10:30:40 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"cartId\": 1,\n    \"totalPrice\": 0,\n    \"products\": [\n        {\n            \"productId\": 3,\n            \"productName\": \"string2\",\n            \"image\": \"default.png\",\n            \"description\": \"string\",\n            \"quantity\": 9,\n            \"price\": 0,\n            \"discount\": 0,\n            \"specialPrice\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Put Product on Cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzgxMTYsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.Fd4AkHs2UfggLWdtrd4-F5PBAF0YPPahGhBCTEYx9aU"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"url": "localhost:8080/api/public/carts/1/products/3/quantity/2"
+			},
+			"response": [
+				{
+					"name": "Cart-Product1",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": "localhost:8080/api/public/carts/1/products/3/quantity/2"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 10:31:39 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"cartId\": 1,\n    \"totalPrice\": 0,\n    \"products\": [\n        {\n            \"productId\": 3,\n            \"productName\": \"string2\",\n            \"image\": \"default.png\",\n            \"description\": \"string\",\n            \"quantity\": 8,\n            \"price\": 0,\n            \"discount\": 0,\n            \"specialPrice\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get User Cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzgxMTYsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.Fd4AkHs2UfggLWdtrd4-F5PBAF0YPPahGhBCTEYx9aU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/public/users/data3@example.com/carts/4"
+			},
+			"response": [
+				{
+					"name": "cart1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/public/users/data3@example.com/carts/4"
+					},
+					"status": "Found",
+					"code": 302,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 10:33:17 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"cartId\": 4,\n    \"totalPrice\": 0,\n    \"products\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzgxMTYsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.Fd4AkHs2UfggLWdtrd4-F5PBAF0YPPahGhBCTEYx9aU"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/api/public/carts/1/product/3"
+			},
+			"response": [
+				{
+					"name": "Cart1",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/api/public/carts/1/product/3"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 10:35:00 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Product string2 removed from the cart !!!"
+				}
+			]
+		},
+		{
+			"name": "Post Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzgxMTYsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.Fd4AkHs2UfggLWdtrd4-F5PBAF0YPPahGhBCTEYx9aU"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"url": "localhost:8080/api/public/users/string@example.com/carts/1/payments/credit/order"
+			},
+			"response": [
+				{
+					"name": "Order1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": "localhost:8080/api/public/users/string@example.com/carts/1/payments/credit/order"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 10:42:03 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"orderId\": 6,\n    \"email\": \"string@example.com\",\n    \"orderItems\": [\n        {\n            \"orderItemId\": 1,\n            \"product\": {\n                \"productId\": 3,\n                \"productName\": \"string2\",\n                \"image\": \"default.png\",\n                \"description\": \"string\",\n                \"quantity\": 7,\n                \"price\": 0,\n                \"discount\": 0,\n                \"specialPrice\": 0\n            },\n            \"quantity\": 2,\n            \"discount\": 0,\n            \"orderedProductPrice\": 0\n        }\n    ],\n    \"orderDate\": \"2025-02-10\",\n    \"payment\": {\n        \"paymentId\": 6,\n        \"paymentMethod\": \"credit\"\n    },\n    \"totalAmount\": 0,\n    \"orderStatus\": \"Order Accepted !\"\n}"
+				},
+				{
+					"name": "Order-COD only",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"paymentMethod\": \"cash on delivery\",\n    \"address\":\"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/public/users/testing2@example.com/carts/2/payments/cash on delivery/order"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Feb 2025 13:05:49 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"orderId\": 26,\n    \"email\": \"testing2@example.com\",\n    \"orderItems\": [\n        {\n            \"orderItemId\": 19,\n            \"product\": {\n                \"productId\": 52,\n                \"productName\": \"productsebelasss\",\n                \"image\": \"default.png\",\n                \"description\": \"productsebelas\",\n                \"quantity\": 2,\n                \"price\": 10000,\n                \"discount\": 0,\n                \"specialPrice\": 10000\n            },\n            \"quantity\": 1,\n            \"discount\": 0,\n            \"orderedProductPrice\": 10000\n        }\n    ],\n    \"orderDate\": \"2025-02-14\",\n    \"payment\": {\n        \"paymentId\": 26,\n        \"paymentMethod\": \"cash on delivery\",\n        \"address\": \"string\"\n    },\n    \"totalAmount\": 10000,\n    \"orderStatus\": \"Order Accepted !\"\n}"
+				},
+				{
+					"name": "Order-With Coupon",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"paymentMethod\": \"cash on delivery\",\n    \"couponId\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/public/users/testing2@example.com/carts/2/payments/cash on delivery/order"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Feb 2025 13:14:20 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"orderId\": 27,\n    \"email\": \"testing2@example.com\",\n    \"orderItems\": [\n        {\n            \"orderItemId\": 20,\n            \"product\": {\n                \"productId\": 52,\n                \"productName\": \"productsebelasss\",\n                \"image\": \"default.png\",\n                \"description\": \"productsebelas\",\n                \"quantity\": 1,\n                \"price\": 10000,\n                \"discount\": 0,\n                \"specialPrice\": 10000\n            },\n            \"quantity\": 1,\n            \"discount\": 0,\n            \"orderedProductPrice\": 10000\n        }\n    ],\n    \"orderDate\": \"2025-02-14\",\n    \"payment\": {\n        \"paymentId\": 27,\n        \"paymentMethod\": \"cash on delivery\",\n        \"couponId\": 1\n    },\n    \"totalAmount\": 9000,\n    \"orderStatus\": \"Order Accepted !\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzgxMTYsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.Fd4AkHs2UfggLWdtrd4-F5PBAF0YPPahGhBCTEYx9aU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/admin/orders"
+			},
+			"response": [
+				{
+					"name": "Orders1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/admin/orders"
+					},
+					"status": "Found",
+					"code": 302,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 10:42:21 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"content\": [\n        {\n            \"orderId\": 6,\n            \"email\": \"string@example.com\",\n            \"orderItems\": [\n                {\n                    \"orderItemId\": 1,\n                    \"product\": {\n                        \"productId\": 3,\n                        \"productName\": \"string2\",\n                        \"image\": \"default.png\",\n                        \"description\": \"string\",\n                        \"quantity\": 7,\n                        \"price\": 0,\n                        \"discount\": 0,\n                        \"specialPrice\": 0\n                    },\n                    \"quantity\": 2,\n                    \"discount\": 0,\n                    \"orderedProductPrice\": 0\n                }\n            ],\n            \"orderDate\": \"2025-02-10\",\n            \"payment\": {\n                \"paymentId\": 6,\n                \"paymentMethod\": \"credit\"\n            },\n            \"totalAmount\": 0,\n            \"orderStatus\": \"Order Accepted !\"\n        }\n    ],\n    \"pageNumber\": 0,\n    \"pageSize\": 2,\n    \"totalElements\": 1,\n    \"totalPages\": 1,\n    \"lastPage\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Orders By USer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzgxMTYsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.Fd4AkHs2UfggLWdtrd4-F5PBAF0YPPahGhBCTEYx9aU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/public/users/string@example.com/orders"
+			},
+			"response": [
+				{
+					"name": "Order1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/public/users/string@example.com/orders"
+					},
+					"status": "Found",
+					"code": 302,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 10:43:32 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"orderId\": 6,\n        \"email\": \"string@example.com\",\n        \"orderItems\": [\n            {\n                \"orderItemId\": 1,\n                \"product\": {\n                    \"productId\": 3,\n                    \"productName\": \"string2\",\n                    \"image\": \"default.png\",\n                    \"description\": \"string\",\n                    \"quantity\": 7,\n                    \"price\": 0,\n                    \"discount\": 0,\n                    \"specialPrice\": 0\n                },\n                \"quantity\": 2,\n                \"discount\": 0,\n                \"orderedProductPrice\": 0\n            }\n        ],\n        \"orderDate\": \"2025-02-10\",\n        \"payment\": {\n            \"paymentId\": 6,\n            \"paymentMethod\": \"credit\"\n        },\n        \"totalAmount\": 0,\n        \"orderStatus\": \"Order Accepted !\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Order By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzgxMTYsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.Fd4AkHs2UfggLWdtrd4-F5PBAF0YPPahGhBCTEYx9aU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/public/users/string@example.com/orders/6"
+			},
+			"response": [
+				{
+					"name": "Order1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/public/users/string@example.com/orders/6"
+					},
+					"status": "Found",
+					"code": 302,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 10:44:57 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"orderId\": 6,\n    \"email\": \"string@example.com\",\n    \"orderItems\": [\n        {\n            \"orderItemId\": 1,\n            \"product\": {\n                \"productId\": 3,\n                \"productName\": \"string2\",\n                \"image\": \"default.png\",\n                \"description\": \"string\",\n                \"quantity\": 7,\n                \"price\": 0,\n                \"discount\": 0,\n                \"specialPrice\": 0\n            },\n            \"quantity\": 2,\n            \"discount\": 0,\n            \"orderedProductPrice\": 0\n        }\n    ],\n    \"orderDate\": \"2025-02-10\",\n    \"payment\": {\n        \"paymentId\": 6,\n        \"paymentMethod\": \"credit\"\n    },\n    \"totalAmount\": 0,\n    \"orderStatus\": \"Order Accepted !\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Put Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzgxMTYsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.Fd4AkHs2UfggLWdtrd4-F5PBAF0YPPahGhBCTEYx9aU"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"url": "localhost:8080/api/admin/users/string@example.com/orders/6/orderStatus/done"
+			},
+			"response": [
+				{
+					"name": "Order1",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": "localhost:8080/api/admin/users/string@example.com/orders/6/orderStatus/done"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 10:46:04 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"orderId\": 6,\n    \"email\": \"string@example.com\",\n    \"orderItems\": [\n        {\n            \"orderItemId\": 1,\n            \"product\": {\n                \"productId\": 3,\n                \"productName\": \"string2\",\n                \"image\": \"default.png\",\n                \"description\": \"string\",\n                \"quantity\": 7,\n                \"price\": 0,\n                \"discount\": 0,\n                \"specialPrice\": 0\n            },\n            \"quantity\": 2,\n            \"discount\": 0,\n            \"orderedProductPrice\": 0\n        }\n    ],\n    \"orderDate\": \"2025-02-10\",\n    \"payment\": {\n        \"paymentId\": 6,\n        \"paymentMethod\": \"credit\"\n    },\n    \"totalAmount\": 0,\n    \"orderStatus\": \"done\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Put Image Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkxNzgxMTYsImVtYWlsIjoiZGF0YTNAZXhhbXBsZS5jb20ifQ.Fd4AkHs2UfggLWdtrd4-F5PBAF0YPPahGhBCTEYx9aU"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"image\": \"string.png\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/admin/products/5/image"
+			},
+			"response": [
+				{
+					"name": "image1",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"image\": \"string.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/admin/products/5/image"
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Feb 2025 12:45:31 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Get All Coupon",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkzMzY3NjksImVtYWlsIjoidGVzdGluZzJAZXhhbXBsZS5jb20ifQ.c91zXtsKUlZumPj06vD-FJmINN8qvM7PEFcGaLi1BGQ"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/public/all-coupon"
+			},
+			"response": [
+				{
+					"name": "Coupons1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/public/all-coupon"
+					},
+					"status": "Found",
+					"code": 302,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Feb 2025 13:12:56 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"couponId\": 1,\n        \"brandName\": \"first\",\n        \"discount\": 10,\n        \"active\": true\n    },\n    {\n        \"couponId\": 2,\n        \"brandName\": \"string\",\n        \"discount\": 5,\n        \"active\": true\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Post Add Coupon",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkzMzY3NjksImVtYWlsIjoidGVzdGluZzJAZXhhbXBsZS5jb20ifQ.c91zXtsKUlZumPj06vD-FJmINN8qvM7PEFcGaLi1BGQ"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"couponId\": 2,\n    \"discount\" : 5,\n    \"active\": true,\n    \"brandName\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/admin/add-coupon"
+			},
+			"response": [
+				{
+					"name": "Coupon1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"couponId\": 2,\n    \"discount\" : 5,\n    \"active\": true,\n    \"brandName\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/admin/add-coupon"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Feb 2025 11:22:49 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"couponId\": 2,\n    \"brandName\": \"string\",\n    \"discount\": 5,\n    \"active\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Post Add Brand",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3Mzk1NDMzNDcsImVtYWlsIjoidGVzdGluZzJAZXhhbXBsZS5jb20ifQ.74PIIqVxKg5dkJWD9UUZjVeS5NiR8SEsmcivM13qzNk"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"brandName\":\"String\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/admin/brand"
+			},
+			"response": [
+				{
+					"name": "Brand1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brandName\":\"String\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/admin/brand"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Feb 2025 14:36:16 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"brandId\": 1,\n    \"brandName\": \"String\",\n    \"products\": null\n}"
+				}
+			]
+		}
+	]
+}

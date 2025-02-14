@@ -20,7 +20,6 @@ public class CouponController {
 
     @PostMapping("/admin/add-coupon")
     public ResponseEntity<CouponDTO> addCoupon(@RequestBody CouponDTO couponDTO) {
-        System.out.println("berjalan baik");
         CouponDTO coupon = couponService.addCoupon(couponDTO);
 
         return new ResponseEntity<CouponDTO>(coupon, HttpStatus.CREATED);

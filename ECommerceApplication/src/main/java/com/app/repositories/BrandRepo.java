@@ -8,4 +8,5 @@ import com.app.entites.Brand;
 @Repository
 public interface BrandRepo extends JpaRepository<Brand, Long> {
 	Brand findByBrandId(Long id);
+	Brand findByBrandName(String brandName);
 }

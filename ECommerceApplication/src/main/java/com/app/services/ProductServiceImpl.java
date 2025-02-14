@@ -99,10 +99,29 @@ public class ProductServiceImpl implements ProductService {
 		Category category = categoryRepo.findById(categoryId)
 		.orElseThrow(() -> new ResourceNotFoundException("Category", "categoryId", categoryId));
 
-		Brand brand = brandRepo.findById(brandId.getBrandId())
-				.orElseThrow(() -> new ResourceNotFoundException("Brand", "brandId", brandId.getBrandId()));
+		boolean isBrandNotPresent = false;
+
+		List<Brand> brands = brandRepo.findAll();
+
+		for (int i = 0; i < brands.size(); i++) {
+			System.out.println(brands.get(i).getBrandName());
+			System.out.println(brands.get(i).getBrandId());
+			if (brands.get(i).getBrandId().equals(brandId.getBrandId())
+					&& brands.get(i).getBrandName().equals(brandId.getBrandName())) {
+
+				isBrandNotPresent = true;
+				break;
+			}
+		}
+
+		if (!isBrandNotPresent) {
+			throw new APIException("Brand Id and Brand Name doesn't match !!!");
+		}
 
 		boolean isProductNotPresent = true;
+
+		Brand brand = brandRepo.findById(brandId.getBrandId())
+				.orElseThrow(() -> new ResourceNotFoundException("Brand", "brandId", brandId.getBrandId()));
 
 		List<Product> products = brand.getProducts();
 
