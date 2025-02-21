@@ -23,7 +23,6 @@ public class CouponServiceImpl implements CouponService{
 
     @Override
     public CouponDTO addCoupon(CouponDTO couponDTO) {
-        List<Coupon> coupons = couponRepo.findAll();
 
         Coupon coupon = new Coupon();
         coupon.setDiscount(couponDTO.getDiscount());

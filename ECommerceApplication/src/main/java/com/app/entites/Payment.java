@@ -27,7 +27,7 @@ public class Payment {
 
 	private Long couponId;
 
-	private String address;
+	private Address address;
 
 	@ManyToOne
 	@JoinColumn(name = "id")
