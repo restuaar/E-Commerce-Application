@@ -8,7 +8,7 @@ import com.app.payloads.PaymentDTO;
 
 public interface OrderService {
 	
-	OrderDTO placeOrder(String email, Long cartId, String paymentMethod, PaymentDTO paymentDTO);
+	OrderDTO placeOrder(String email, Long cartId, PaymentDTO paymentDTO);
 	
 	OrderDTO getOrder(String email, Long orderId);
 	

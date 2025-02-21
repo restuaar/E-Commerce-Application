@@ -12,6 +12,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Entity
 @Data
 @Table(name = "coupons")
@@ -30,5 +32,8 @@ public class Coupon {
   private double discount;
 
   @NotNull
-  private boolean active;
+  private Date expDate;
+
+  @NotNull
+  private Long quantity;
 }

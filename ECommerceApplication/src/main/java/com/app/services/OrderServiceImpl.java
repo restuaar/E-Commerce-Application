@@ -2,6 +2,7 @@ package com.app.services;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -35,6 +36,9 @@ public class OrderServiceImpl implements OrderService {
 	public OrderRepo orderRepo;
 
 	@Autowired
+	public BankRepo bankRepo;
+
+	@Autowired
 	private PaymentRepo paymentRepo;
 
 	@Autowired
@@ -56,7 +60,7 @@ public class OrderServiceImpl implements OrderService {
 	public ModelMapper modelMapper;
 
 	@Override
-	public OrderDTO placeOrder(String email, Long cartId, String paymentMethod, PaymentDTO paymentDTO) {
+	public OrderDTO placeOrder(String email, Long cartId, PaymentDTO paymentDTO) {
 
 		Cart cart = cartRepo.findCartByEmailAndCartId(email, cartId);
 
@@ -69,26 +73,81 @@ public class OrderServiceImpl implements OrderService {
 		order.setEmail(email);
 		order.setOrderDate(LocalDate.now());
 
-    double totalAmount = cart.getTotalPrice();
-    if (paymentDTO.getCouponId() != null) {
-      Coupon coupon = couponRepo.findByCouponId(paymentDTO.getCouponId());
-      if (coupon == null) {
-        throw new ResourceNotFoundException("Coupon", "couponId", paymentDTO.getCouponId());
-      }
-      totalAmount = (1 - (coupon.getDiscount() / 100.0)) * cart.getTotalPrice();
-      order.setOrderStatus("Order Accepted !");
-    } 
+		double totalAmount = cart.getTotalPrice();
+
+		Date today = new Date();
+
+		if (paymentDTO.getCouponId() != null) {
+			Coupon coupon = couponRepo.findByCouponId(paymentDTO.getCouponId());
+			if (coupon == null) {
+				throw new ResourceNotFoundException("Coupon", "couponId", paymentDTO.getCouponId());
+			} else if (coupon.getExpDate().before(today)) {
+				throw new APIException("This coupon has expired");
+			} else if (coupon.getQuantity() <= 0) {
+				throw new APIException("This coupon is out of stock");
+			}
+
+			coupon.setQuantity(coupon.getQuantity() - 1);
+			totalAmount = (1 - (coupon.getDiscount() / 100.0)) * cart.getTotalPrice();
+		}
 
 		order.setTotalAmount(totalAmount);
 		order.setOrderStatus("Order Accepted !");
 
 		Payment payment = new Payment();
 		payment.setOrder(order);
-		payment.setPaymentMethod(paymentMethod);
+
+		if(paymentDTO.getCouponId() != null) {
+			payment.setCouponId(paymentDTO.getCouponId());
+		}
+
+		String paymentType = paymentDTO.getPaymentMethod().toLowerCase();
+		payment.setPaymentMethod(paymentType);
+
+		if (paymentType.equals("cash on delivery")) {
+			String address = paymentDTO.getAddress();
+			if (paymentDTO == null || address == null || address.isEmpty()) {
+				throw new APIException("You must input the address");
+			} else {
+				payment.setAddress(address);
+			}
+		} else if (paymentType.equals("bank transfer")) {
+			String bankNameDTO = paymentDTO.getBankName().toLowerCase();
+			Bank bank = bankRepo.findByBankName(bankNameDTO);
+			String bankName = "";
+
+			if (bank != null) {
+				bankName = bank.getBankName();
+			}else{
+				throw new APIException("Bank tidak terdaftar");
+			}
+
+			BankDTO bankDTO = new BankDTO();
+			bankDTO.setId(bank.getId());
+			bankDTO.setAccountNumber(bank.getAccountNumber());
+			bankDTO.setBankName(bank.getBankName());
+			payment.setBank(bank);
+			paymentDTO.setBank(bankDTO);
+
+		} else if (paymentType.equals("credit card")) {
+			Long cardNumber = paymentDTO.getCardNumber();
+			Integer CVC = paymentDTO.getCardVerificationCode();
+			if (cardNumber == null || String.valueOf(cardNumber).length() != 16) {
+				throw new APIException("Card number must be 16 digits");
+			}
+
+			if (CVC == null || String.valueOf(CVC).length() != 3) {
+				throw new APIException("Card verification code must be 3 digits");
+			}
+
+			payment.setCardNumber(cardNumber);
+			payment.setCardVerificationCode(CVC);
+	 	} else {
+			throw new APIException("Your payment method doesn't exist");
+		}
 
 		payment = paymentRepo.save(payment);
-		payment.setCouponId(paymentDTO.getCouponId());
-
+		
 		order.setPayment(payment);
 
 		Order savedOrder = orderRepo.save(order);
@@ -124,9 +183,8 @@ public class OrderServiceImpl implements OrderService {
 
 			product.setQuantity(product.getQuantity() - quantity);
 		});
-
 		OrderDTO orderDTO = modelMapper.map(savedOrder, OrderDTO.class);
-		
+
 		orderItems.forEach(item -> orderDTO.getOrderItems().add(modelMapper.map(item, OrderItemDTO.class)));
 
 		return orderDTO;
@@ -172,20 +230,20 @@ public class OrderServiceImpl implements OrderService {
 
 		List<OrderDTO> orderDTOs = orders.stream().map(order -> modelMapper.map(order, OrderDTO.class))
 				.collect(Collectors.toList());
-		
+
 		if (orderDTOs.size() == 0) {
 			throw new APIException("No orders placed yet by the users");
 		}
 
 		OrderResponse orderResponse = new OrderResponse();
-		
+
 		orderResponse.setContent(orderDTOs);
 		orderResponse.setPageNumber(pageOrders.getNumber());
 		orderResponse.setPageSize(pageOrders.getSize());
 		orderResponse.setTotalElements(pageOrders.getTotalElements());
 		orderResponse.setTotalPages(pageOrders.getTotalPages());
 		orderResponse.setLastPage(pageOrders.isLast());
-		
+
 		return orderResponse;
 	}
 

@@ -47,7 +47,7 @@ public class BrandServiceImpl implements BrandService {
 
   @Override
   public BrandDTO createBrand(Brand brand) {
-    Brand savedBrand = brandRepo.findByBrandId(brand.getBrandId());
+    Brand savedBrand = brandRepo.findByBrandName(brand.getBrandName());
 
     if (savedBrand != null) {
       throw new APIException("Brand with the name '" + brand.getBrandName() + "' already exists !!!");

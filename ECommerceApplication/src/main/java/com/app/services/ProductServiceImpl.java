@@ -243,20 +243,23 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public ProductResponse searchProductByBrand(String brand, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) {
+	public ProductResponse searchProductByBrand(String brandName, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) {
 		Sort sortByAndOrder = sortOrder.equalsIgnoreCase("asc") ? Sort.by(sortBy).ascending()
 				: Sort.by(sortBy).descending();
 
+		Brand brand = brandRepo.findByBrandName(brandName);
+
 		Pageable pageDetails = PageRequest.of(pageNumber, pageSize, sortByAndOrder);
 
-		Page<Product> pageProducts = productRepo.findByBrand_BrandName("%" + brand + "%", pageDetails);
+		Page<Product> pageProducts = productRepo.findByBrand(brand, pageDetails);
 
 		List<Product> products = pageProducts.getContent();
-		
+
 		if (products.size() == 0) {
-			throw new APIException("Products not found with brand: " + brand);
+			throw new APIException("Products not found with brand: " + brandName);
 		}
 
+		System.out.println("masuk 3");
 		List<ProductDTO> productDTOs = products.stream().map(p -> modelMapper.map(p, ProductDTO.class))
 				.collect(Collectors.toList());
 
