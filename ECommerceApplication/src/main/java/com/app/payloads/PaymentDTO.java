@@ -8,12 +8,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PaymentDTO {
-	private Long paymentId;
-	private String paymentMethod;
-	private Long couponId;
-	private String addressId;
-	private String bankName;
-	private Long cardNumber;
-	private Integer cardVerificationCode;
-	private BankDTO bank;
+  private Long paymentId;
+  private String paymentMethod;
+  private String couponCode;
+  private Long addressId;
+  private String bankName;
+  private Long cardNumber;
+  private Integer cardVerificationCode;
+  private BankDTO bank;
+  private String mobileNumber;
 }

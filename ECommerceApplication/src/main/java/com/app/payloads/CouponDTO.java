@@ -12,6 +12,7 @@ import java.util.Date;
 public class CouponDTO {
     private Long couponId;
     private String couponName;
+    private String couponCode;
     private double discount;
     private Date expDate;
     private Long quantity;

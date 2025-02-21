@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
+
 @Entity
 @Data
 @Table(name = "coupons")
@@ -27,6 +28,9 @@ public class Coupon {
   @NotBlank
   @Size(min = 5, message = "Coupon must contain atleast 5 characters")
   private String couponName;
+
+  @NotBlank
+  private String couponCode;
 
   @NotNull
   private double discount;

@@ -76,11 +76,12 @@ public class OrderServiceImpl implements OrderService {
     double totalAmount = cart.getTotalPrice();
 
     Date today = new Date();
+    Payment payment = new Payment();
 
-    if (paymentDTO.getCouponId() != null) {
-      Coupon coupon = couponRepo.findByCouponId(paymentDTO.getCouponId());
+    if (paymentDTO.getCouponCode() != null) {
+      Coupon coupon = couponRepo.findByCouponCode(paymentDTO.getCouponCode());
       if (coupon == null) {
-        throw new ResourceNotFoundException("Coupon", "couponId", paymentDTO.getCouponId());
+        throw new ResourceNotFoundException("Coupon", "couponId", paymentDTO.getCouponCode());
       } else if (coupon.getExpDate().before(today)) {
         throw new APIException("This coupon has expired");
       } else if (coupon.getQuantity() <= 0) {
@@ -89,42 +90,40 @@ public class OrderServiceImpl implements OrderService {
 
       coupon.setQuantity(coupon.getQuantity() - 1);
       totalAmount = (1 - (coupon.getDiscount() / 100.0)) * cart.getTotalPrice();
+      payment.setCoupon(coupon);
     }
 
     order.setTotalAmount(totalAmount);
     order.setOrderStatus("Order Accepted !");
 
-    Payment payment = new Payment();
+    
     payment.setOrder(order);
-
-    if (paymentDTO.getCouponId() != null) {
-      payment.setCouponId(paymentDTO.getCouponId());
-    }
 
     String paymentType = paymentDTO.getPaymentMethod().toLowerCase();
     payment.setPaymentMethod(paymentType);
     User user = userRepo.findByEmail(email).orElse(null);
+    if (user == null) {
+      throw new ResourceNotFoundException("User", "email", email);
+    }
 
     if (paymentType.equals("cash on delivery")) {
-      String addressId = paymentDTO.getAddressId();
-      if (paymentDTO == null || addressId == null || addressId.isEmpty()) {
+      Long addressId = paymentDTO.getAddressId();
+      if (paymentDTO == null || addressId == null) {
         throw new APIException("You must input the address");
       } else {
-        Address address = user.getAddresses().stream().filter(a -> a.getAddressId().equals(Long.parseLong(addressId)))
-            .findFirst()
+        Address address = user.getAddresses().stream().filter(a -> a.getAddressId().equals(addressId)).findFirst()
             .orElse(null);
-
         if (address == null) {
           throw new ResourceNotFoundException("Address", "addressId", addressId);
         }
-
         payment.setAddress(address);
       }
     } else if (paymentType.equals("bank transfer")) {
       String bankNameDTO = paymentDTO.getBankName().toLowerCase();
       Bank bank = bankRepo.findByBankName(bankNameDTO);
+
       if (bank == null) {
-        throw new ResourceNotFoundException("Bank", "bankName", bankNameDTO);
+        throw new APIException("Bank tidak terdaftar");
       }
 
       BankDTO bankDTO = new BankDTO();
@@ -147,6 +146,21 @@ public class OrderServiceImpl implements OrderService {
 
       payment.setCardNumber(cardNumber);
       payment.setCardVerificationCode(CVC);
+    } else if (paymentType.equals("e-wallet")) {
+
+      String mobileNumber = paymentDTO.getMobileNumber();
+      if (mobileNumber == null || mobileNumber.length() != 10) {
+        throw new APIException("Mobile number must be 10 digits");
+      }
+      if (!mobileNumber.matches("[0-9]+")) {
+        throw new APIException("Mobile number must be numeric");
+      }
+
+      if (!user.getMobileNumber().equals(mobileNumber)) {
+        throw new APIException("Mobile number must be the same as your registered mobile number");
+      }
+
+      payment.setMobileNumber(mobileNumber);
     } else {
       throw new APIException("Your payment method doesn't exist");
     }

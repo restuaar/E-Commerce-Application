@@ -14,26 +14,32 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Payment {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long paymentId;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long paymentId;
 
-	@OneToOne(mappedBy = "payment", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
-	private Order order;
+  @OneToOne(mappedBy = "payment", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+  private Order order;
 
-	@NotBlank
-	@Size(min = 4, message = "Payment method must contain atleast 4 characters")
-	private String paymentMethod;
+  @NotBlank
+  @Size(min = 4, message = "Payment method must contain atleast 4 characters")
+  private String paymentMethod;
 
-	private Long couponId;
+  @ManyToOne
+  @JoinColumn(name = "coupon_id")
+  private Coupon coupon;
 
-	private Address address;
+  @ManyToOne
+  @JoinColumn(name = "address_id")
+  private Address address;
+  
+  private String mobileNumber;
 
-	@ManyToOne
-	@JoinColumn(name = "id")
-	private Bank bank;
+  @ManyToOne
+  @JoinColumn(name = "id")
+  private Bank bank;
 
-	private Long cardNumber;
+  private Long cardNumber;
 
-	private Integer cardVerificationCode;
+  private Integer cardVerificationCode;
 }

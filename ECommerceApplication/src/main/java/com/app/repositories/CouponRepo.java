@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface CouponRepo extends JpaRepository<Coupon, Long> {
     Coupon findByCouponId(Long CouponId);
     Coupon findByCouponName(String CouponId);
+    Coupon findByCouponCode(String CouponCode);
 }
